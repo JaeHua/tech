@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 const base = '/image/'
 export default defineConfig({
-  base: /tech/,
+  base: '/tech/',
   title: "技术站点",
   description: "分享记录一些...",
   head: [
