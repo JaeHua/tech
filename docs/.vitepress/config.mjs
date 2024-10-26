@@ -18,7 +18,12 @@ export default defineConfig({
           {text:'Docker',link: '/guide/docker.md' },
           {text:'Linux',link: '/guide/linux.md' },
         ]
-      }
+      },
+      { text: 'Golang', 
+        items:[
+          {text:'Golang入门与基础',link: '/guide/golang_part1.md' },
+        ]
+       },
     ],
 
     sidebar: 
@@ -29,7 +34,11 @@ export default defineConfig({
           { text: 'Dokcer', link: '../guide/docker' },
           {text:'Linux',link:'../guide/linux'}
         ]
-      }]
+      },
+      {text:'Golang',items:[
+        {text:'Golang入门与基础',link:'../guide/golang_part1'} 
+      ]} 
+      ],
       }
     ,
 
