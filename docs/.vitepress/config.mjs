@@ -17,6 +17,7 @@ export default defineConfig({
         items:[
           {text:'Docker',link: '/guide/docker.md' },
           {text:'Linux',link: '/guide/linux.md' },
+          {text:'Redis',link: '/guide/redis.md' },
         ]
       },
       { text: 'Golang', 
@@ -32,7 +33,8 @@ export default defineConfig({
         text: '技术栈',
         items: [
           { text: 'Dokcer', link: '../guide/docker' },
-          {text:'Linux',link:'../guide/linux'}
+          {text:'Linux',link:'../guide/linux'},
+          {text:'Redis',link:'../guide/redis'}
         ]
       },
       {text:'Golang',items:[

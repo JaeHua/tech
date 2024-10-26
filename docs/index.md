@@ -23,7 +23,8 @@ features:
   - title: 🐧Linux
     details: 一款强大的开源系统，伟大无需多言！
     link: ..\guide\linux.md
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: 💾Redis
+    details: Redis 是一个开源（BSD许可）的，内存中的数据结构存储系统，它可以用作数据库，缓存和消息中间件。
+    link: ..\guide\redis.md
 ---
 

@@ -1,3 +1,6 @@
+---
+outline: deep
+---
 ## SDk安装配置
 
 官网：https://golang.google.cn/dl/
