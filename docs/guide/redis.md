@@ -7,7 +7,7 @@ outline: deep
 
 **单机mysql时代**
 
-![img](https://bqlvnd032q7.feishu.cn/space/api/box/stream/download/asynccode/?code=MTg2MDg1MTBjZDY3YWZhOWNmMDI5NDkyZGExMWQxYTBfSXJ2SGxJU2hnajEyU2g0NWtwR1hKSlJrdHNOSnlMcmVfVG9rZW46TnBzMWJLRzd6b3Z2bnF4WHpaV2NRWVBxbnplXzE3Mjk5MjgzMzY6MTcyOTkzMTkzNl9WNA)
+![alt text](redis_image/image.png)
 
 1. 数据量太大，一个机器就放不下
 2. 数据的索引（B+Tree）,一个机器内存也放不下
@@ -17,13 +17,13 @@ outline: deep
 
 网站80%的情况都是在读，每次都要去查询数据库的话就十分的麻烦！所以说我们希望减轻数据的压力，我们可以使用缓存来保证效率！
 
-![img](https://bqlvnd032q7.feishu.cn/space/api/box/stream/download/asynccode/?code=ZjI4MzIwZmI3YzUxNGQ4MTM3YjVhN2FhZTU2YzRmNGVfM1hNN0xOeVVUdGlYZDNEOXR4cG5XaWFVeG9sNXdVRnBfVG9rZW46T282ZmJiOHFwb2VQVmZ4Wml0cGNGd2Q0bmlkXzE3Mjk5MjgzMzY6MTcyOTkzMTkzNl9WNA)
+![alt text](redis_image/image-1.png)
 
 发展过程：优化数据结构和索引->文件缓存（IO)->Memcached(当时最热门的技术)
 
 **分库分表+水平拆分+****MySQL****集群**
 
-![img](https://bqlvnd032q7.feishu.cn/space/api/box/stream/download/asynccode/?code=NDg5NTRhNDY2ZjQxMmUxMzgxNWQ2ZTYxYzE1MzAzNTdfVkI0U2JCYWt3cmtWYUF5QVZxVVR1SDJNdDAxdjBGN2FfVG9rZW46VGtlSGJoZzZtb2psVXV4cUVRQ2NaeFlSbjVlXzE3Mjk5MjgzMzY6MTcyOTkzMTkzNl9WNA)
+![alt text](redis_image/image-2.png)
 
 - 早些年MyISAM：表锁，十分影响效率！高并发下就会出现严重的锁问题
 - 转战InnoDB：行锁
@@ -40,7 +40,7 @@ MySOL有的使用它来存一些比较大的文件，博客，图片！数据库
 
 **目前一个基本的互联网企业**
 
-![img](https://bqlvnd032q7.feishu.cn/space/api/box/stream/download/asynccode/?code=OWVkNDFhMWRhY2ZlNjA5ODMzODkzYzE4MmNkOGNmODBfT0xCU2ZKVXpyUWR3TEV1OFBnUVBsb29MajBaNmtoR3JfVG9rZW46Wnk3RWI5amY3b3Bmd3R4cmx3WWNjcmFybnliXzE3Mjk5MjgzMzY6MTcyOTkzMTkzNl9WNA)
+![alt text](redis_image/image-3.png)
 
 ### Why NoSQL?
 
@@ -66,11 +66,11 @@ NoSQL = Not Only SQL (不仅仅是SQL)
 
 了解（页面的数据多种多样，肯定不能用一个mysql存储）
 
-![img](https://bqlvnd032q7.feishu.cn/space/api/box/stream/download/asynccode/?code=OGJmMTQ0NjY3NjBkNzU2ZmM2MzM1OGFiMDdmMjg1OGVfaUUwTFRpWnVTZUVxZ3VqRHRGY21YSzlCZ2tqR1FoSU9fVG9rZW46UW90a2JsR2Nyb3B0aHB4UlVESGNLMXVnbm9mXzE3Mjk5MjgzMzY6MTcyOTkzMTkzNl9WNA)
+![alt text](redis_image/image-4.png)
 
 演进：
 
-![img](https://bqlvnd032q7.feishu.cn/space/api/box/stream/download/asynccode/?code=MDRhMDUwZTg1NTAzZmM1ZTE4NTc3NWFiMTdhOTgyYzJfWTloQXp4aUhkbE1hZ0VHMlJQdjRYblZRc3dLNThuemZfVG9rZW46WFFlZWJsVHNYb1hidDR4dXJLNWNIZXFCbnFnXzE3Mjk5MjgzMzY6MTcyOTkzMTkzNl9WNA)
+![alt text](redis_image/image-5.png)
 
 1. 商品的基本信息名称、价格、商家信息：关系型数据库就可以解决了！MySQL/orac1e（淘宝早年就去IOE了！-王坚：推荐文章：阿里云的这群疯子） 淘宝内部的 MvSQL 不是大家用的 MySQL
 2. 商品的描述、评论（文字比较多） -文档型数据库中，MongoDB
@@ -167,7 +167,7 @@ tar -zxvf redis-7.0.15.tar.gz
 
 - 进入解压后文件可以看到redis配置文件，最好做一份拷贝
 
-![img](https://bqlvnd032q7.feishu.cn/space/api/box/stream/download/asynccode/?code=NTc1NTRkN2E1NWM0YTNlYjQzYWM0Y2M0NzI4Y2E0NDJfQ1BMbGZ5ZHhPUk5oT3JUenJxdFRJVktsQ3htM0cxZFJfVG9rZW46SVV6MGJJOVhHb1pBaVd4bEJPVGMxSHBtbmpmXzE3Mjk5MjgzMzY6MTcyOTkzMTkzNl9WNA)
+![alt text](redis_image/image-6.png)
 
 - 环境配置
 
@@ -176,17 +176,17 @@ apt -y install gcc
 make
 ```
 
-![img](https://bqlvnd032q7.feishu.cn/space/api/box/stream/download/asynccode/?code=MGUxYTI1MWJmNjg2OGUzZjQ3OWNlZDJmNmZkYTVmZGJfU2pBeUNsRk0wbFhxdURIS3gxZ1Vob00ySjBHMldjYWhfVG9rZW46T1NPZmJESFg3bzROeVd4aHVTVGNaQ1ExbkdnXzE3Mjk5MjgzMzY6MTcyOTkzMTkzNl9WNA)
+![alt text](redis_image/image-7.png)
 
 - 安装
 
 make install
 
-![img](https://bqlvnd032q7.feishu.cn/space/api/box/stream/download/asynccode/?code=NmEwYjI0NTIyMzA2MjA4NDFlMzI0MzU5OWNmOThmZThfMHpSekpqdVh3b3BMQUJSdkpDRXJsY0JaSWJKTWdFOGlfVG9rZW46UHFHZWJuU1Zqb3ExT2Z4SnQ2RGN5dmpJblV5XzE3Mjk5MjgzMzY6MTcyOTkzMTkzNl9WNA)
+![alt text](redis_image/image-8.png)
 
 - user/local/bin下会多出命令
 
-![img](https://bqlvnd032q7.feishu.cn/space/api/box/stream/download/asynccode/?code=YWFkNDFhYjVmZTI1NTdlYjE5YjBkNjk0ZGU2NjA4ZWNfV1dyRUNRakE0UVRRUVZ0aTFpYnRPQ0xNd2laSHBxRHVfVG9rZW46WUwxVmJZQk80b1ZwR2t4YnRmOGM2bHk1bmdMXzE3Mjk5MjgzMzY6MTcyOTkzMTkzNl9WNA)
+![alt text](redis_image/image-9.png)
 
 ```Shell
 redis-benchmark：测试电脑性能的
@@ -219,7 +219,7 @@ cp /home/server/redis-7.0.15/redis.conf /root/myredis
 vim redis.conf
 ```
 
-![img](https://bqlvnd032q7.feishu.cn/space/api/box/stream/download/asynccode/?code=N2I0NzVlNTBiOTI4MzA5MGEwYmZlMjk3ZTE1NDFiMTBfd0E5RnphVE1ra1RYNzBMYmpkN29pSERpOWltRXJ0TmFfVG9rZW46VEZHMGJHaEFKb1hmRWN4ZWNaUmNRaDV4bnllXzE3Mjk5MjgzMzY6MTcyOTkzMTkzNl9WNA)
+![alt text](redis_image/image-10.png)
 
 在309行把daemonize no改成yes。
 
@@ -235,11 +235,11 @@ redis-server /root/myredis/redis.conf
 ps -ef | grep redis
 ```
 
-![img](https://bqlvnd032q7.feishu.cn/space/api/box/stream/download/asynccode/?code=NjljNjEzOGI0MTg0N2UyOTRmNjQ2ZjkxZWJiY2JiZmRfT2U2RlRqZ3lOdExsaFY5bWhVeEtWSXhUbmxZalpORDNfVG9rZW46QW1ZU2JNVVRCb1JSYXR4Z1NWMmM3ajRsbjZnXzE3Mjk5MjgzMzY6MTcyOTkzMTkzNl9WNA)
+![alt text](redis_image/image-11.png)
 
 1. 自动客户端测试(连接指定端口号)
 
-![img](https://bqlvnd032q7.feishu.cn/space/api/box/stream/download/asynccode/?code=MzkxOGI3NDYwMzUxZGNkMDJiZTFmYzIyNDc5NjU0YjBfNFdsS1VEakxaZUNmTENGUFR2bmJsSUNVbWxleGZaYW1fVG9rZW46Um1hdWJvdG5vb29iZmF4SThZa2MzRWxZbjFlXzE3Mjk5MjgzMzY6MTcyOTkzMTkzNl9WNA)
+![alt text](redis_image/image-12.png)
 
 1. 关闭redis
    1. 单实例关闭
@@ -290,7 +290,7 @@ chmod 777 /usr/local/docker/redis/data
 docker pull redis
 ```
 
-![img](https://bqlvnd032q7.feishu.cn/space/api/box/stream/download/asynccode/?code=ZmM3YmQyYzZmNmM1NDlkNDYwZTVjZDI2NTJiZmI0ZjhfS292QTdWNk43aFBYclRnSXNISEFuUmpodGRRZ2RGNHBfVG9rZW46RWJFYWJadVo1b2MyZWl4WTBHYWNqc2c5bjdwXzE3Mjk5MjgzMzY6MTcyOTkzMTkzNl9WNA)
+![alt text](redis_image/image-13.png)
 
 1. 运行容器
 
@@ -350,7 +350,7 @@ docker exec -it myRedis bash
 
 > redis默认有16个数据库
 
-![img](https://bqlvnd032q7.feishu.cn/space/api/box/stream/download/asynccode/?code=YzUyOTlhYzg0M2FlYWY5NmU3NThiZGY3NjdhYTQ1MTFfYTBaeDF1T0JPUTNUNUUxTEdZaUt1em13cUJVb1BYMWxfVG9rZW46VVBrQ2JhY3k5b0lGcEF4c0IwUmNNMWNBblpjXzE3Mjk5MjgzMzY6MTcyOTkzMTkzNl9WNA)
+![alt text](redis_image/image-14.png)
 
 默认使用的是第0个
 
@@ -361,7 +361,7 @@ dbsize #数据库大小查看
 
 插入一个值后就变成1了
 
-![img](https://bqlvnd032q7.feishu.cn/space/api/box/stream/download/asynccode/?code=ZjZlNWJmZWVlOWVlMDY4ZTY2ZjlmM2NhYzE3YWM0OTZfM3FEb1A1WHV4SDhHcFpHcHZpdTk1VTVCVXVxYXNDZEtfVG9rZW46RWE1WWJCNFdab3BCaWZ4QWRIWmNVRlZ3bktjXzE3Mjk5MjgzMzY6MTcyOTkzMTkzNl9WNA)![img](https://bqlvnd032q7.feishu.cn/space/api/box/stream/download/asynccode/?code=ZmFhM2MzNGU5M2Q0ZWVjODllODAwNWNmMGQyYzM3YTlfTmY5YzNhZk0ySnBHNUdnV1Nlb3hIaU9CZGRNMHdWaTlfVG9rZW46UnVpTWJoZDhob2d5cnh4aHViS2NtdGxUbjhnXzE3Mjk5MjgzMzY6MTcyOTkzMTkzNl9WNA)
+![alt text](redis_image/image-15.png)![alt text](redis_image/image-16.png)
 
 #### **基础命令**
 
@@ -733,6 +733,6 @@ Zset在set的基础上，增加了一个值，set k1 v1, zset k1 score1 v1.实�
 
 - ZRANGEBYSCORE
 
-![img](https://bqlvnd032q7.feishu.cn/space/api/box/stream/download/asynccode/?code=NTAwNWJhYjE5NDQxNzlmMDg4Zjg1ODE0NDlhMWU4MDFfVXFmVFhwNlh3eTlacnU5anR5UkpGVjVvUTE4MTVRR0RfVG9rZW46VjRYM2JrMWxKb0xXVm94TGM5VGNMSVQyblNoXzE3Mjk5MjgzMzY6MTcyOTkzMTkzNl9WNA)
+![alt text](redis_image/image-17.png)
 
-![img](https://bqlvnd032q7.feishu.cn/space/api/box/stream/download/asynccode/?code=ZWQ3Nzk3OWZiYzI1MGE3ODc1YTdhODAzYzRmY2E2NmFfZ2ZyV2h1WDVnRkFHbzhEd3BIMnpOQVE3SUhnbUdsWDFfVG9rZW46UmZmdWIwUzBGb0ZRbXR4dm05MWMyYnJrbnRnXzE3Mjk5MjgzMzY6MTcyOTkzMTkzNl9WNA)
+![alt text](redis_image/image-18.png)

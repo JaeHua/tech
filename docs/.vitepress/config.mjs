@@ -1,5 +1,4 @@
 import { defineConfig } from 'vitepress'
-
 const base = '/image/'
 export default defineConfig({
   base: '/tech/',

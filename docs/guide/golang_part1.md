@@ -23,7 +23,7 @@ GOROOT`   `GOPATH
 go version
 ```
 
-![img](https://bqlvnd032q7.feishu.cn/space/api/box/stream/download/asynccode/?code=MGE5MjhhZTFmNTllNzkwYzY1YzQ4MGE4MDI2ODhiMzNfWUx5MWc5NFBwV1NwaDFNZjNRZlpscjZURDd4YWgwSmhfVG9rZW46T2pYNmJRNHlEbzNjUkF4Y1BKcGNCeHJRbkhjXzE3Mjk5Mjc5NjE6MTcyOTkzMTU2MV9WNA)
+![alt text](golang/part1/image.png)
 
 ## Go mod依赖管理
 
