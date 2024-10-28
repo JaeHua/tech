@@ -6,7 +6,7 @@ export default defineConfig({
   title: "技术站点",
   description: "分享记录一些...",
   head: [
-    ['link', { rel: 'icon', href: `${base}logo.png` }],],
+    ['link', { rel: 'icon', href: "/tech/image/logo.png" }],],
   themeConfig: {
     siteTitle: ' JaeHua技术站点',   
     logo: '/image/logo.png',			    
