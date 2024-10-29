@@ -6,7 +6,7 @@ hero:
   name: "GoBlog"
   text: "A fantastic Site"
   image:
-    src: /image/biaozhi.png
+    src: /image/home-icon.png
   tagline: 随笔记录与积累...
   # actions:
   #   - theme: brand
