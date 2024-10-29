@@ -8,7 +8,7 @@ export default defineConfig({
     ['link', { rel: 'icon', href: "/tech/image/logo.png" }],],
   themeConfig: {
     siteTitle: ' JaeHua技术站点',   
-    logo: '/image/logo.png',			    
+    logo: '/image/home-icon.png',			    
 
     nav: [
       { text: '首页', link: '/' },
