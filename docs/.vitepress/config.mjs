@@ -24,6 +24,8 @@ export default defineConfig({
           {text:'Golang入门与基础',link: '/guide/golang_part1.md' },
         ]
        },
+      { text: '算法', link: '/' },
+      { text: '关于', link: '/' },
     ],
 
     sidebar: 
