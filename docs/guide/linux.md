@@ -1,5 +1,11 @@
 ---
 outline: deep
+prev:
+  text: 'Docker'
+  link: '/guide/docker'
+next:
+  text: 'Redis'
+  link: '/guide/redis'
 ---
 # Linux基础命令笔记
 

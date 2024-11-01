@@ -1,5 +1,8 @@
 ---
 outline: deep
+next:
+  text: 'Linux'
+  link: '/guide/linux'
 ---
 # Docker学习笔记记录
 ## 安装准备

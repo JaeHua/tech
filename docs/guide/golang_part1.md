@@ -1,5 +1,8 @@
 ---
 outline: deep
+prev:
+  text: 'Redis'
+  link: '/guide/redis'
 ---
 ## SDk安装配置
 

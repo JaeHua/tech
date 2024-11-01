@@ -1,5 +1,11 @@
 ---
 outline: deep
+prev:
+  text: 'Linux'
+  link: '/guide/linux'
+next:
+  text: 'Golang'
+  link: '/guide/golang_part1'
 ---
 ## Nosql概述
 

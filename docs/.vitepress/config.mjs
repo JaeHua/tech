@@ -24,7 +24,12 @@ export default defineConfig({
           {text:'Golang入门与基础',link: '/guide/golang_part1.md' },
         ]
        },
-      { text: '算法', link: '/' },
+      { text: '算法', 
+        items:[
+              {text:'动态规划',link:'/guide/dp.md'},
+              {text:'分治算法',link:'/guide/divide.md'}
+        ]
+      },
       { text: '关于', link: '/' },
     ],
 
@@ -40,7 +45,11 @@ export default defineConfig({
       },
       {text:'Golang',items:[
         {text:'Golang入门与基础',link:'../guide/golang_part1'} 
-      ]} 
+      ]} ,
+      {text:'算法',items:[
+        {text:'动态规划',link:'../guide/dp'},
+        {text:'分治算法',link:'../guide/divide'}
+      ]}
       ],
       }
     ,
