@@ -3,6 +3,9 @@ outline: deep
 prev:
   text: 'Golang入门与基础'
   link: '/guide/golang_part1'
+next:
+  text: 'Golang常见数据结构和算法'
+  link: '/guide/golang_part3'
 ---
 ## 并发
 
