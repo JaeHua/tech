@@ -1645,5 +1645,6 @@ func main() {
     }
 }
 ```
-
+![alt text](golang/part2/image-2.png)
+![alt text](golang/part2/image-1.png)
 总而言之，pprof可以用来解决定位CPU问题、定位内存问题、定位goroutine、定位锁问题、定位goroutine阻塞等待同步问题。
