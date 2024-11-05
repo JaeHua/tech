@@ -122,6 +122,7 @@ export default defineConfig({
       { text: 'Golang', 
         items:[
           {text:'Golang入门与基础',link: '/guide/golang_part1.md' },
+          {text:'Golang核心技能',link: '/guide/golang_part2.md' },
         ]
        },
       { text: '算法', 
@@ -144,7 +145,8 @@ export default defineConfig({
         ]
       },
       {text:'Golang',items:[
-        {text:'Golang入门与基础',link:'../guide/golang_part1'} 
+        {text:'Golang入门与基础',link:'../guide/golang_part1'} ,
+        {text:'Golang核心技能',link:'../guide/golang_part2'} 
       ]} ,
       {text:'算法',items:[
         {text:'动态规划',link:'../guide/dp'},
