@@ -1,10 +1,10 @@
 ---
 outline: deep
 prev:
-  text: 'Golang核心技能'
+  text: '核心技能'
   link: '/guide/golang_part2'
 next:
-  text: 'Golang设计模式'
+  text: '设计模式'
   link: '/guide/golang_part4'
 ---
 ## 数据结构

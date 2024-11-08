@@ -1,8 +1,11 @@
 ---
 outline: deep
 prev:
-  text: 'Golang设计模式'
+  text: '设计模式'
   link: '/guide/golang_part4'
+next:
+  text: '关系型数据库和分布式缓存'
+  link: '/guide/golang_part6'
 ---
 ## **Protobuf**
 

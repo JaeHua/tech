@@ -4,7 +4,7 @@ prev:
   text: 'Redis'
   link: '/guide/redis'
 next:
-    text: 'Golang核心技能'
+    text: '核心技能'
     link: '/guide/golang_part2'
 ---
 ## SDk安装配置

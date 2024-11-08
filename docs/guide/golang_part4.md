@@ -1,10 +1,10 @@
 ---
 outline: deep
 prev:
-  text: 'Golang常见数据结构和算法'
+  text: '常见数据结构和算法'
   link: '/guide/golang_part3'
 next:
-  text: 'Golang web框架和rpc框架'
+  text: 'web框架和rpc框架'
   link: '/guide/golang_part5'
 ---
 ## 创建型模式

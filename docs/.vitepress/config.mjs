@@ -121,11 +121,12 @@ export default defineConfig({
       },
       { text: 'Golang', 
         items:[
-          {text:'Golang入门与基础',link: '/guide/golang_part1.md' },
-          {text:'Golang核心技能',link: '/guide/golang_part2.md' },
-          {text:'Golang常见数据结构和算法',link: '/guide/golang_part3.md' },
-          {text:'Golang设计模式',link: '/guide/golang_part4.md' },
-          {text:'Golang web框架和rpc框架',link: '/guide/golang_part5.md' },
+          {text:'入门与基础',link: '/guide/golang_part1.md' },
+          {text:'核心技能',link: '/guide/golang_part2.md' },
+          {text:'常见数据结构和算法',link: '/guide/golang_part3.md' },
+          {text:'设计模式',link: '/guide/golang_part4.md' },
+          {text:'web框架和rpc框架',link: '/guide/golang_part5.md' },
+          {text:'关系型数据库和分布式缓存',link: '/guide/golang_part6.md' },
 
 
         ]
@@ -150,11 +151,13 @@ export default defineConfig({
         ]
       },
       {text:'Golang',items:[
-        {text:'Golang入门与基础',link:'../guide/golang_part1'} ,
-        {text:'Golang核心技能',link:'../guide/golang_part2'},
-        {text:'Golang常见数据结构和算法',link:'../guide/golang_part3'} ,
-        {text:'Golang设计模式',link:'../guide/golang_part4'} ,
-        {text:'Golang web框架和rpc框架',link: '/guide/golang_part5' },
+        {text:'入门与基础',link:'../guide/golang_part1'} ,
+        {text:'核心技能',link:'../guide/golang_part2'},
+        {text:'常见数据结构和算法',link:'../guide/golang_part3'} ,
+        {text:'设计模式',link:'../guide/golang_part4'} ,
+        {text:'web框架和rpc框架',link: '/guide/golang_part5' },
+        {text:'关系型数据库和分布式缓存',link: '/guide/golang_part6' },
+
 
 
 
