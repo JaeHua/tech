@@ -61,18 +61,6 @@
   --vp-home-hero-image-filter: blur(40px);
 }
 
-/* 也可自行单独修改brand按钮 */
-/* :root {
-  --vp-button-brand-border: #F6CEEC;
-  --vp-button-brand-text: #F6CEEC;
-  --vp-button-brand-bg: #D939CD;
-
-  --vp-button-brand-hover-border: #F6CEEC;
-  --vp-button-brand-hover-text: #fff;
-  --vp-button-brand-hover-bg: #D939CD;
-
-  --vp-button-brand-active-border: #F6CEEC;
-} */
 /* 提示框背景颜色 */
 :root {
   --vp-custom-block-tip-bg: var(--vp-c-green-soft);
@@ -129,4 +117,194 @@
 }
 .DocSearch-Button:hover {
   background-color: #f5f5f6;
+}
+/* Markdown 文本样式美化 */
+
+/* 段落样式 */
+p {
+  font-size: 1.1rem;
+  line-height: 1.75;
+  color: #333;
+  margin-bottom: 1.25em;
+}
+
+/* 标题样式 */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  color: var(--vp-c-brand);
+  margin-top: 1.5em;
+  margin-bottom: 0.75em;
+  border-bottom: 2px solid var(--vp-c-brand-light);
+  padding-bottom: 0.3em;
+}
+
+h1 {
+  font-size: 2.25rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1.1rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+/* 链接样式 */
+a {
+  color: var(--vp-c-brand);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: 0.3s ease;
+}
+
+a:hover {
+  border-bottom-color: var(--vp-c-brand-light);
+}
+
+/* 引用块样式 */
+blockquote {
+  border-left: 4px solid var(--vp-c-brand-light);
+  padding-left: 1em;
+  color: #555;
+  background-color: #f9f9ff;
+  margin: 1.5em 0;
+  font-style: italic;
+}
+
+/* 代码块样式 */
+pre {
+  background-color: #f5f5f7;
+  border-radius: 8px;
+  padding: 1.25em;
+  overflow-x: auto;
+}
+
+pre code {
+  font-family: "Fira Code", monospace;
+  font-size: 0.95rem;
+}
+
+code {
+  background-color: rgba(60, 60, 67, 0.05);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-family: "Fira Code", monospace;
+  color: #d63384;
+}
+
+/* 列表样式 */
+ul, ol {
+  margin-left: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+ul li {
+  list-style-type: disc;
+}
+
+ol li {
+  list-style-type: decimal;
+}
+
+/* 表格样式 */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5em;
+}
+
+table th, table td {
+  padding: 0.75em;
+  border: 1px solid #ddd;
+}
+
+table th {
+  background-color: var(--vp-c-brand-light);
+  color: #fff;
+  font-weight: bold;
+}
+
+table td {
+  background-color: #f9f9ff;
+}
+
+/* 图片样式 */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* 按钮美化 */
+button {
+  background-color: var(--vp-c-brand);
+  border: none;
+  padding: 0.6em 1.2em;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--vp-c-brand-light);
+}
+
+/* 自定义块样式 */
+
+/* 提示框 */
+.custom-block.tip {
+  border-left: 4px solid var(--vp-c-green-2);
+  background-color: var(--vp-c-green-soft);
+  padding: 1em;
+  border-radius: 8px;
+  margin: 1.5em 0;
+}
+
+.custom-block.tip h5 {
+  color: var(--vp-c-brand);
+}
+
+/* 警告框 */
+.custom-block.warning {
+  border-left: 4px solid var(--vp-c-yellow-2);
+  background-color: rgba(255, 243, 205, 0.6);
+  padding: 1em;
+  border-radius: 8px;
+  margin: 1.5em 0;
+}
+
+.custom-block.warning h5 {
+  color: var(--vp-c-brand);
+}
+
+/* 危险框 */
+.custom-block.danger {
+  border-left: 4px solid var(--vp-c-red-2);
+  background-color: rgba(255, 205, 210, 0.6);
+  padding: 1em;
+  border-radius: 8px;
+  margin: 1.5em 0;
+}
+
+.custom-block.danger h5 {
+  color: var(--vp-c-brand);
+}
+
+/* 表格对齐 */
+table th, table td {
+  text-align: left;
 }
