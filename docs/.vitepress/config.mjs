@@ -117,6 +117,8 @@ export default defineConfig({
           {text:'Docker',link: '/guide/docker.md' },
           {text:'Linux',link: '/guide/linux.md' },
           {text:'Redis',link: '/guide/redis.md' },
+          {text:'Git',link: '/guide/git.md' },
+
         ]
       },
       { text: 'Golang', 
@@ -147,7 +149,8 @@ export default defineConfig({
         items: [
           { text: 'Dokcer', link: '../guide/docker' },
           {text:'Linux',link:'../guide/linux'},
-          {text:'Redis',link:'../guide/redis'}
+          {text:'Redis',link:'../guide/redis'},
+          {text:'Git',link: '/guide/git' },
         ]
       },
       {text:'Golang',items:[
