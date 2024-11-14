@@ -977,3 +977,121 @@ http:
 ```
 出现successfully就说明安装成功了 等待几分钟，就可以访问harbor了：
 ![alt text](docker_image/image-15.png)
+
+## 进阶
+
+###  Docker安装配置
+
+- **RootFs环境依赖:** Docker容器依赖于一个根文件系统 (RootFS)。这部分强调了RootFS正常运行所需的依赖项，包括库文件、系统调用和其他基本组件。  RootFS的完整性对容器的运行至关重要。
+- **Linux Namespace隔离:** Docker利用Linux命名空间来隔离容器彼此之间以及与宿主机。命名空间为系统资源（如进程ID、网络接口和挂载点）提供隔离视图，增强安全性并防止冲突。  不同的命名空间类型包括PID、NET、IPC、UTS、MNT等。
+- **Cgroup资源配额限制 :**  控制组 (cgroups) 允许对Docker容器进行资源限制和统计。这使得管理员能够限制CPU使用率、内存消耗和I/O操作，防止资源耗尽并确保容器之间公平共享资源。  可以通过`docker run --cpus 2 --memory 4g`等参数来设置容器的资源限制。
+
+### **Docker容器操作**
+
+- **Docker命令行操作 :**  这部分说明了使用Docker CLI命令行界面来管理容器、镜像、网络和卷的主要方式。  常用的命令包括`docker run`、`docker ps`、`docker stop`、`docker rm`、`docker build`、`docker images`等等。
+- **自定义容器启动命令或入口程序:** Docker允许用户为容器指定自定义命令或入口点，定义容器内应用程序的启动和运行方式。  这通常在Dockerfile中通过`CMD`或`ENTRYPOINT`指令来设置。
+
+```Dockerfile
+FROM ubuntu:latest
+CMD ["/bin/bash"] 默认命令
+ENTRYPOINT ["/usr/sbin/sshd"] 启动sshd服务
+```
+
+- **容器health check :** Docker支持健康检查来监控运行中容器的健康状况。这些检查可以在容器配置中定义，用于确定容器是否正常运行。  这可以通过在Dockerfile中使用`HEALTHCHECK`指令来实现。
+
+```Dockerfile
+HEALTHCHECK --interval=30s --timeout=3s \
+  CMD curl -f http://localhost:8080 || exit 1
+```
+
+- **容器****重启****策略 :** Docker提供各种重启策略来规定容器在宿主机重启或容器故障时（例如，总是重启、失败时重启、从不重启）的行为。  这可以通过`docker run --restart=always`等参数来设置。
+- **容器资源配额 :**  与cgroups类似，这允许为单个容器设置资源限制，防止资源匮乏并确保稳定性。
+- **容器命名空间隔离 :**  再次强调命名空间隔离对于安全性和资源管理的重要性.
+
+### **数据管理和网络**
+
+- **Volume数据存储持久化与数据共享 :** Docker卷为容器数据提供持久存储，即使容器本身被删除或重启，数据仍然存在。卷还可以促进容器之间的数据共享。  可以使用`docker volume create`创建卷，`docker run -v <卷名>:/data`将卷挂载到容器。
+- **bridge. host. overlay网络驱动 :** Docker提供不同的网络驱动程序来将容器连接到彼此以及外部世界。`bridge`创建内部网络，`host`共享宿主的网络，`overlay`在Swarm模式下启用网络。
+
+### **镜像管理和安全:**
+
+- **镜像分层机制:** Docker镜像构建在层之上，允许高效地存储和共享公共组件。更改仅影响相关的层，从而提高性能并减少存储空间。
+- **容器****写时复制****机制 :**  此机制通过仅在进行更改时复制数据来优化资源使用，从而提高效率并减少存储开销。
+- **容器联合挂载机制 :**  这指的是Docker如何管理镜像和容器的分层文件系统，从而实现高效的共享和更新。
+- **镜像内容寻址机制 :** Docker使用内容寻址来确保镜像的完整性和可重复性。镜像通过其内容哈希来标识，确保相同的镜像被视为相同。
+- **镜像构建:**  从Dockerfile创建Docker镜像的过程，Dockerfile指定构建镜像的步骤。
+- **镜像共享:**  通过Docker Hub等注册表共享Docker镜像的能力，简化了部署和协作。
+- **私有注册中心构建 :**  创建私有Docker注册表以在组织的基础架构内存储和管理镜像。
+
+### Swarm
+
+Docker Swarm 是 Docker 官方提供的原生容器编排工具，它允许你将多个 Docker 主机组合成一个集群，以实现容器应用的部署、扩展和管理。  相比于其他编排工具（如 Kubernetes），Swarm 的优势在于其简单易用，因为它直接集成在 Docker Engine 中，无需安装额外的组件。  然而，这也意味着它的功能相对较少，在复杂场景下的管理能力不如 Kubernetes。
+
+**集群管理:**
+
+- **节点类型****:** Swarm 集群由三种类型的节点组成：
+  - **管理器节点 (Manager Node):**  负责集群的管理和调度，至少需要一个管理器节点。管理器节点形成一个 Raft 一致性集群，确保高可用性。如果一个管理器节点失效，其他节点会自动选举新的领导者。
+  - **工作节点 (Worker Node):**  运行容器的节点。
+  - **管理器和工作节点 (Manager and Worker Node):**  一个节点可以同时作为管理器和工作节点，这在小型集群中很常见，但大型集群中通常建议将角色分开。
+- **节点加入:**  通过 `docker swarm init` 命令初始化一个 Swarm 集群，该命令会在当前主机上创建一个管理器节点。其他主机可以通过 `docker swarm join` 命令加入集群，并指定管理器节点的地址和令牌。
+- **节点状态:**  可以使用 `docker node ls` 命令查看集群中所有节点的状态，包括角色、可用性等信息。
+- **集群扩展:**  通过添加新的工作节点来扩展集群容量，以满足不断增长的应用需求。
+
+**服务部署:**
+
+- **服务定义:**  使用 Docker Compose 文件或 `docker service create` 命令定义服务。服务定义包含镜像名称、端口映射、资源限制、副本数量等信息。
+- **服务调度:**  管理器节点负责将服务调度到工作节点上，并根据需要进行扩展或缩容。
+- **服务扩展:**  通过修改服务定义中的副本数量来扩展服务，Swarm 会自动在工作节点上创建新的容器实例。
+- **滚动更新:**  Swarm 支持滚动更新，可以在不中断服务的情况下更新容器镜像或配置。
+- **服务发现:**  Swarm 内置服务发现机制，容器可以通过服务名称相互通信，无需手动配置IP地址或端口号。
+
+**网络:**
+
+- **Overlay 网络:**  Swarm 使用 Overlay 网络来连接不同节点上的容器，即使它们在不同的物理网络中。Overlay 网络提供了一种虚拟网络，使容器能够像在同一主机上一样进行通信。
+- **Ingress****:**  Swarm 提供 Ingress 功能，可以将外部流量路由到集群中的服务。
+
+**初始化****Swarm****集群 (在管理器节点上执行):**
+
+```Plain
+docker swarm init --advertise-addr <管理器节点IP地址>
+```
+
+**(输出会包含一个加入令牌，用于其他节点加入集群)**
+
+**在工作节点上加入****Swarm****集群:**
+
+```Plain
+docker swarm join --token <加入令牌> <管理器节点IP地址>:2377
+```
+
+**使用Docker Compose部署服务:**
+
+假设你有一个名为 `docker-compose.yml` 的文件，定义了一个名为 `web` 的服务：
+
+```YAML
+version: "3.7"
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    deploy:
+      replicas: 3 三个副本
+      restart_policy:
+        condition: on-failure
+docker stack deploy -c docker-compose.yml web
+```
+
+**查看服务状态:**
+
+```Plain
+docker service ls
+```
+
+**扩展服务副本:**
+
+```Bash
+docker service update --replicas 5 web
+```
+
+总而言之，Docker Swarm 对于简单的容器编排任务来说是一个不错的选择，其易用性是其主要优势。 但对于大型、复杂的应用和需要更高级功能的场景，Kubernetes 可能更适合。
