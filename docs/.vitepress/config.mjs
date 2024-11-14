@@ -136,7 +136,8 @@ export default defineConfig({
       { text: '算法', 
         items:[
               {text:'动态规划',link:'/guide/dp.md'},
-              {text:'分治算法',link:'/guide/divide.md'}
+              {text:'分治算法',link:'/guide/divide.md'},
+              {text:'贪心算法',link:'/guide/tanxing'},
         ]
       },
       { text: '关于', link: '/' },
@@ -167,7 +168,9 @@ export default defineConfig({
       ]} ,
       {text:'算法',items:[
         {text:'动态规划',link:'../guide/dp'},
-        {text:'分治算法',link:'../guide/divide'}
+        {text:'分治算法',link:'../guide/divide'},
+        {text:'贪心算法',link:'../guide/tanxing'},
+
       ]}
       ],
       }

@@ -1,8 +1,11 @@
 ---
 outline: deep
-next:
+prev:
   text: 'Docker'
   link: '/guide/docker'
+next:
+  text: '分治算法'
+  link: '/guide/divide'
 ---
 ## 重要例子
 ### 最大子数组
