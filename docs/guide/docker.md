@@ -710,9 +710,11 @@ $ docker login --username=秋刀鱼爱SEGFALUT registry.cn-heyuan.aliyuncs.com
 $ docker pull registry.cn-heyuan.aliyuncs.com/jianglele/repo:[镜像版本号]
 
 1. 将镜像推送到Registry
-
-$$ docker login --username=秋刀鱼爱SEGFALUT registry.cn-heyuan.aliyuncs.co$$ docker tag [ImageId] registry.cn-heyuan.aliyuncs.com/jianglele/repo:[镜像版本号]$ docker push registry.cn-heyuan.aliyuncs.com/jianglele/repo:[镜像版本号]
-
+```go
+docker login --username=秋刀鱼爱SEGFALUT registry.cn-heyuan.aliyuncs.co
+docker tag [ImageId] registry.cn-heyuan.aliyuncs.com/jianglele/repo:[镜像版本号]
+docker push registry.cn-heyuan.aliyuncs.com/jianglele/repo:[镜像版本号]
+```
 ## **部署自己的Go项目**
 
 tips:项目要mysql.具体配置要修改，我另外开了一个mysql的容器
@@ -977,6 +979,7 @@ http:
 ```
 出现successfully就说明安装成功了 等待几分钟，就可以访问harbor了：
 ![alt text](docker_image/image-15.png)
+
 
 ## 进阶
 
